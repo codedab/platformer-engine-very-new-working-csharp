@@ -67,7 +67,7 @@ public class AnimationState
     public Rectangle GetSourceRectangle(int frameWidth, int frameHeight)
     {
         if (!_clips.TryGetValue(CurrentClip, out var clip))
-            return Rectangle.Empty;
+            return new Rectangle(0, 0, 0, 0);
 
         int absoluteFrame = clip.StartFrame + CurrentFrame;
         return new Rectangle(absoluteFrame * frameWidth, 0, frameWidth, frameHeight);
